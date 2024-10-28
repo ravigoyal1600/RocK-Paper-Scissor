@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100dvh;
+  max-width: 100dvh;
+  color: #0079ff;
+  background: linear-gradient(#f6fa70 60%, #0079ff);
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+/* Utility classes */
+.hidden {
+  display: none !important;
+}
+
+h1 {
+  font-size: 3.5rem;
+  text-shadow: 3px 2px 2px #ff0062ee;
+}
+
+button {
+  padding: 8px;
+  font-size: 1.8rem;
+  background: #fffbeb;
+  width: 40%;
+  border-color: #cdc2ae;
+  border-radius: 0.5rem;
+}
+
+main {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+#score {
+  display: flex;
+  gap: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #eb3131;
+}
+
+article {
+  font-size: 2rem;
+}
+
+#cards-wrapper {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card[value="stone"] {
+  background-image: url("./images/rock.jpeg");
+}
+.card[value="paper"] {
+  background-image: url("./images/paper.jpeg");
+}
+.card[value="scissors"] {
+  background-image: url("./images/scissors.jpeg");
+}
+
+#score > span {
+  content: attr(value);
+}
+
+.card {
+  border: 2px solid #102030;
+  border-radius: 0.8em;
+  width: 28%;
+  aspect-ratio: 1 / 1;
+  transition: all ease 0.3s;
+  background-size: cover;
+  background-position: center;
+}
+.card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 2px #cdc2ae;
+}
+.card:active {
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 2px #cdc2ae;
+}
+
+#modal[open] {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+#modal[data-status="win"] {
+  color: #00dfa2;
+}
+#modal[data-status="lose"] {
+  color: #ff0060;
+}
+
+footer {
+  font-size: 1.5rem;
+  color: #eee;
+}
+
+@media (max-width: 768px) {
+  #cards-wrapper {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .card {
+    width: 10rem;
+    max-width: none;
+  }
+}

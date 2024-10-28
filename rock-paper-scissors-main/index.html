@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Rock Paper Scissors</h1>
+    </header>
+    <main>
+      <button onclick="gameStart()" id="start-button">Are you Ready?</button>
+      <button id="restart" class="hidden" type="submit" onclick="resetGame()">
+        Restart
+      </button>
+      <section class="hidden" id="score">
+        <div>You: <span id="user-score">0</span></div>
+        <div>Bot: <span id="comp-score">0</span></div>
+      </section>
+      <section id="cards-wrapper">
+        <div value="stone" class="card option"></div>
+        <div value="paper" class="card option"></div>
+        <div value="scissors" class="card option"></div>
+        <div id="comp-card" class="card comp hidden"></div>
+      </section>
+      <dialog id="modal" data-status="">
+        <span id="result"></span>
+        <button id="replay" type="submit" onclick="gameStart()">Replay</button>
+      </dialog>
+    </main>
+    <footer>
+      <p>
+       
+      </p>
+    </footer>
+  </body>
+</html>
